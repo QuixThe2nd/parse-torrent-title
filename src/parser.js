@@ -2,7 +2,7 @@ function extendOptions(options) {
     options = options || {};
 
     const defaultOptions = {
-        skipIfAlreadyFound: true,
+        skipIfAlreadyFound: false,
         type: "string",
     };
 
@@ -38,7 +38,9 @@ function createHandlerFromRegExp(name, regExp, options) {
         const [rawMatch, cleanMatch] = match || [];
 
         if (rawMatch) {
-            result[name] = options.value || transformer(cleanMatch || rawMatch);
+            const value = options.value || transformer(cleanMatch || rawMatch);
+            if (!options.skipIfAlreadyFound && name in result) result[`${name}list`] = [...new Set([...result[`${name}list`] ?? [], result[name], value])]
+            result[name] = value;
             return match.index;
         }
 

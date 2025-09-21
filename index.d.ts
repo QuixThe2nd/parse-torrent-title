@@ -1,3 +1,7 @@
+type WithListProperties<T> = T & {
+  [K in keyof T as `${string & K}list`]?: NonNullable<T[K]>[]
+}
+
 declare namespace ParseTorrentTitle {
 
     interface ParserOptions {
@@ -6,8 +10,7 @@ declare namespace ParseTorrentTitle {
         value?: string;
     }
 
-    interface DefaultParserResult {
-        title: string;
+    interface RawParserResult {
         year?: number;
         resolution?: string;
         extended?: boolean;
@@ -34,6 +37,8 @@ declare namespace ParseTorrentTitle {
         episode?: number;
         language?: string;
     }
+
+    type DefaultParserResult = WithListProperties<RawParserResult> & { title: string; };
 
     interface Handler<ParserResult = DefaultParserResult> {
         (input: { title: string, result: ParserResult }): void;
