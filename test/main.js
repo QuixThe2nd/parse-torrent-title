@@ -9,6 +9,7 @@ describe("Random releases", () => {
             title: "sons of anarchy",
             resolution: "480p",
             season: 5,
+            seasonlist: [5],
             episode: 10,
             source: "bluray",
             codec: "x264",
