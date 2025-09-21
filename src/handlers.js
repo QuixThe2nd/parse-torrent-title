@@ -76,7 +76,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\bFDNG\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bHULU\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bMAX\b/i, { type: "uppercase" });
-    parser.addHandler("service", /\bNFLX|NF\b/i, { value: "NFLX" });
+    parser.addHandler("service", /\bNFLX|NF|Netflix\b/i, { value: "NFLX" });
     parser.addHandler("service", /\bPCOK\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bROKU\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bSTAN\b/i, { type: "uppercase" });
