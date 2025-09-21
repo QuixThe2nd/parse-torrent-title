@@ -66,6 +66,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("source", /[\s.[-](WEB)[\s.\]-]/i, { type: "lowercase", skipIfAlreadyFound: true });
     parser.addHandler("source", /\b(DivX|XviD)\b/, { type: "lowercase" });
     parser.addHandler("source", /HDTV/i, { type: "lowercase" });
+    parser.addHandler("source", /\bIMAX\b/i, { type: "lowercase" });
 
     // Service
     parser.addHandler("service", /\bAMZN|Amazon\b/i, { value: "AMZN" });
