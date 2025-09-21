@@ -40,7 +40,7 @@ function createHandlerFromRegExp(name, regExp, options) {
         if (rawMatch) {
             const value = options.value || transformer(cleanMatch || rawMatch);
             if (!options.skipIfAlreadyFound && name in result) result[`${name}list`] = [...new Set([...result[`${name}list`] ?? [], result[name], value])]
-            result[name] = value;
+            if (!(name in result))  result[name] = value;
             return match.index;
         }
 
