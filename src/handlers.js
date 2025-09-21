@@ -111,6 +111,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Bit depth
     parser.addHandler("bitdepth", /\b(8|10|12|16|24)[-\s.]?bits?\b/i, { type: "integer" });
 
+    // Sample Rate
+    parser.addHandler("samplerate", /\b((?:\d+)(?:\.\d+)?)[-\s.]?kHz?\b/i, { type: "float" });
+
     // Group
     parser.addHandler("group", /- ?\(?([^\-. )[]+)\)?(?:\[.*\])?\)?$/);
 
