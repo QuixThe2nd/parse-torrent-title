@@ -28,7 +28,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("proper", /(?:REAL.)?PROPER/, { type: "boolean" });
 
     // Repack
-    parser.addHandler("repack", /REPACK|RERIP/, { type: "boolean" });
+    parser.addHandler("repack", /REPACK|RERIP/i, { type: "boolean" });
 
     // Retail
     parser.addHandler("retail", /\bRetail\b/i, { type: "boolean" });
