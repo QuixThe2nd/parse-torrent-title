@@ -81,6 +81,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\bH?MAX\b/i, { value: "HMAX" });
     parser.addHandler("service", /\bMA\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bNFLX|NF|Netflix\b/i, { value: "NFLX" });
+    parser.addHandler("service", /\biT(?:unes)\b/, { value: "iT" });
     parser.addHandler("service", /\bPCOK\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bROKU\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bSTAN\b/i, { type: "uppercase" });
@@ -149,7 +150,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("language", /\bFLEMISH\b/, { type: "lowercase" });
     parser.addHandler("language", /\bGERMAN\b/, { type: "lowercase" });
     parser.addHandler("language", /\bDUBBED\b/, { type: "lowercase" });
-    parser.addHandler("language", /\b(ITA(?:LIAN)?|iT(?:A(?:LiAN)?)?)\b/, { value: "ita" });
+    parser.addHandler("language", /\b(ITA(?:LIAN)?|iTA(?:LiAN)?)\b/, { value: "ita" });
     parser.addHandler("language", /\bFR(?:ENCH)?\b/, { type: "lowercase" });
     parser.addHandler("language", /\bTruefrench|VF(?:[FI])\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bVOST(?:(?:F(?:R)?)|A)?|SUBFRENCH\b/i, { type: "lowercase" });
