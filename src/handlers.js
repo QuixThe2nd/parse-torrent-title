@@ -86,7 +86,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\bSTAN\b/i, { type: "uppercase" });
 
     // Codec
-    parser.addHandler("codec", /dvix|mpeg2|divx|xvid|[xh][-. ]?26[45]|avc|hevc/i, { type: "lowercase" });
+    parser.addHandler("codec", /[xh][-. ]?265|hevc/i, { value: "h265" });
+    parser.addHandler("codec", /[xh][-. ]?264|avc/i, { value: "h264" });
+    parser.addHandler("codec", /dvix|mpeg2|divx|xvid/i, { type: "lowercase" });
     parser.addHandler("codec", ({ result }) => {
         if (result.codec) {
             result.codec = result.codec.replace(/[ .-]/, "");
