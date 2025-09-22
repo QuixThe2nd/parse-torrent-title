@@ -98,7 +98,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("audio", /MD|MP3|mp3|FLAC|Atmos|TrueHD/, { type: "lowercase" });
     parser.addHandler("audio", /Dual[- ]Audio/i, { type: "lowercase" });
     parser.addHandler("audio", /EAC-?3(?:\.5\.1)?/i, { value: "eac3" });
-    parser.addHandler("audio", /AC-?3(?:\.5\.1)?/i, { value: "ac3" });
+    parser.addHandler("audio", /AC-?3(?:\.5\.1)?/i, { value: "ac3", skipIfAlreadyFound: true });
     parser.addHandler("audio", /\bDD(?:\+|P)/i, { value: "ddp" });
     parser.addHandler("audio", /\bDD[\b\d]/i, { value: "dd" });
     parser.addHandler("audio", /AAC(?:[. ]?2[. ]0)?/, { value: "aac" });
