@@ -84,6 +84,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\biT(?:unes)\b/, { value: "iT" });
     parser.addHandler("service", /\bPCOK\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bROKU\b/i, { type: "uppercase" });
+    parser.addHandler("service", /\bSKST\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bSTAN\b/i, { type: "uppercase" });
 
     // Codec
