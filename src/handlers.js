@@ -74,6 +74,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\bATVP\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bBNGE\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bDLWP\b/i, { type: "uppercase" });
+    parser.addHandler("service", /\bDSCP\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bDSNP\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bFDNG\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bHULU\b/i, { type: "uppercase" });
