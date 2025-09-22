@@ -98,6 +98,7 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Audio
     parser.addHandler("audio", /DTS-HD[\s-.]MA/, { value: "dts-hd-ma" });
+    parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
     parser.addHandler("audio", /DTS(?:-HD)?/, { type: "lowercase", skipIfAlreadyFound: true });
     parser.addHandler("audio", /MD|MP3|mp3|FLAC|Atmos|TrueHD/, { type: "lowercase" });
     parser.addHandler("audio", /Dual[- ]Audio/i, { type: "lowercase" });
