@@ -102,6 +102,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Color
     parser.addHandler("color", /\bHDR(?:10)?\b/i, { value: "HDR" });
     parser.addHandler("color", /\bSDR\b/i, { type: "uppercase" });
+    parser.addHandler("color", /\bDV|DoVi\b/i, { value: "DV" });
 
     // Audio
     parser.addHandler("audio", /DTS-HD[\s-.]MA/, { value: "dts-hd-ma" });
