@@ -97,6 +97,10 @@ exports.addDefaults = /** @type Parser */ parser => {
         }
     });
 
+    // Color
+    parser.addHandler("color", /\bHDR\b/i, { type: "uppercase" });
+    parser.addHandler("color", /\bSDR\b/i, { type: "uppercase" });
+
     // Audio
     parser.addHandler("audio", /DTS-HD[\s-.]MA/, { value: "dts-hd-ma" });
     parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
