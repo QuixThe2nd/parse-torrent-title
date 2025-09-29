@@ -72,6 +72,7 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Service
     parser.addHandler("service", /\bAMZN|Amazon\b/i, { value: "AMZN" });
+    parser.addHandler("service", /\bAUBC\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bATVP\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bBNGE\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bDLWP\b/i, { type: "uppercase" });
