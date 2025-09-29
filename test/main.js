@@ -57,7 +57,7 @@ describe("Random releases", () => {
             year: 1954,
             language: "multi",
             codec: "x264",
-            audio: "ac3",
+            audio: "dd",
             group: "gismo65",
         });
     });
@@ -85,7 +85,7 @@ describe("Random releases", () => {
             year: 2017,
             resolution: "720p",
             codec: "x264",
-            audio: "ac3",
+            audio: "dd",
             group: "EVO",
         });
     });
