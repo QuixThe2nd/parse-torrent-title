@@ -25,7 +25,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("remux", /REMUX/i, { type: "boolean" });
 
     // Proper
-    parser.addHandler("proper", /(?:REAL.)?PROPER/, { type: "boolean" });
+    parser.addHandler("proper", /\d(?:REAL.)?PROPER\d/i, { type: "boolean" });
 
     // Repack
     parser.addHandler("repack", /REPACK|RERIP/i, { type: "boolean" });
