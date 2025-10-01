@@ -30,6 +30,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Repack
     parser.addHandler("repack", /REPACK|RERIP/i, { type: "boolean" });
 
+    // Internal
+    parser.addHandler("internal", /\biNTERNAL\b/, { type: "boolean" });
+
     // Retail
     parser.addHandler("retail", /\bRetail\b/i, { type: "boolean" });
 

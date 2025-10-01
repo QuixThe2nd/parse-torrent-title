@@ -18,6 +18,7 @@ declare namespace ParseTorrentTitle {
         openmatte?: boolean;
         proper?: boolean;
         repack?: boolean;
+        internal?: boolean;
         convert?: boolean;
         hardcoded?: boolean;
         remux?: boolean;
