@@ -116,12 +116,15 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("audio", /AAC(?:[. ]?2[. ]0)?/, { value: "aac" });
 
     // Channels
-    parser.addHandler("channels", /\d+[.\s](?:1|0)\b/i, {
-        transform: (match) => parseFloat(match[1])
-    });
+    parser.addHandler("channels", /\d+[.\s](?:1|0)\b/i);
     parser.addHandler("channels", /2(?:ch)/, { value: 2.0 });
     parser.addHandler("channels", /6(?:ch)/, { value: 5.1 });
     parser.addHandler("channels", /8(?:ch)/, { value: 7.1 });
+    parser.addHandler("channels", ({ result }) => {
+        if (result.channels && typeof result.channels === 'string') {
+            result.channels = parseFloat(result.channels.replace(' ', '.'))
+        }
+    });
 
     // Bit depth
     parser.addHandler("bitdepth", /\b(8|10|12|16|24)[-\s.]?bits?\b/i, { type: "integer" });
