@@ -134,10 +134,10 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Group
     parser.addHandler("group", /- ?\(?([^\-. )[]+)\)?(?:\[.*\])?\)?$/);
-    parser.addHandler("group", /- [a-zA-Z]+\s([a-zA-Z]+)\)?$/i);
+    parser.addHandler("group", /- [a-zA-Z]+\)?[ []([a-zA-Z]+)\)?\]?$/i);
 
     // Encoder
-    parser.addHandler("encoder", /- ([a-zA-Z]+)\s[a-zA-Z]+\)?$/i);
+    parser.addHandler("encoder", /- ([a-zA-Z]+)\)?[ [][a-zA-Z]+\)?\]?$/i);
 
     // Tracker
     parser.addHandler("tracker", /[^\-. )]+\[([^\]]+)\]$/);
