@@ -56,6 +56,12 @@ describe("Parsing audio", () => {
         expect(parse(releaseName)).to.deep.include({ audio: "dd" });
     });
 
+    it("should detect the Atmos audio correctly", () => {
+        const releaseName = "Thor.The.Dark.World.2013.DSNP.WEB-DL.1080p.HDR10.DA5.1.HEVC-ARCADE.mkv";
+
+        expect(parse(releaseName)).to.deep.include({ audio: "atmos" });
+    });
+
     it("should convert the AC-3 audio to AC3", () => {
         const releaseName = "Retroactive 1997 BluRay 1080p AC-3 HEVC-d3g";
 
