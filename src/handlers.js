@@ -1,7 +1,7 @@
 exports.addDefaults = /** @type Parser */ parser => {
 
     // Year
-    parser.addHandler("year", /(?!^)[([]?((?:19[0-9]|20[012])[0-9])[)\]]?/, { type: "integer" });
+    parser.addHandler("year", /[^a-zA-Z0-9](?!^)[([]?((?:19[0-9]|20[012])[0-9])[)\]]?/, { type: "integer" });
 
     // Resolution
     parser.addHandler("resolution", /([0-9]{3,4}[pi])/i, { type: "lowercase" });
