@@ -75,6 +75,26 @@ describe("Random releases", () => {
         });
     });
 
+    it("BoJack Horseman (2014) S05 (1080p NF WEB-DL x265 SDR DDP 5 1 English - DarQ HONE)", () => {
+        const releaseName = "BoJack Horseman (2014) S05 (1080p NF WEB-DL x265 SDR DDP 5 1 English - DarQ HONE)";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "BoJack Horseman",
+            source: "web-dl",
+            year: 2014,
+            resolution: "1080p",
+            codec: "x265",
+            audio: "ddp",
+            color: "SDR",
+            language: "eng",
+            service: "NFLX",
+            season: 5,
+            channels: 5.1,
+            group: "HONE",
+            encoder: "DarQ"
+        });
+    });
+
     it("Ghost In The Shell 2017 720p HC HDRip X264 AC3-EVO", () => {
         const releaseName = "Ghost In The Shell 2017 720p HC HDRip X264 AC3-EVO";
 
