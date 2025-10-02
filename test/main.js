@@ -29,6 +29,24 @@ describe("Random releases", () => {
         });
     });
 
+    it("Finding.Nemo.2003.DSNP.WEB-DL.1080p.HDR10.DDPDA5.1.HEVC-ARCADE.mkv", () => {
+        const releaseName = "Finding.Nemo.2003.DSNP.WEB-DL.1080p.HDR10.DDPDA5.1.HEVC-ARCADE.mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Finding Nemo",
+            year: 2003,
+            service: "DSNP",
+            source: "web-dl",
+            resolution: "1080p",
+            color: "HDR",
+            audio: "atmos",
+            audiolist: ["atmos", "ddp"],
+            channels: 5.1,
+            codec: "h265",
+            container: "mkv"
+        });
+    });
+
     it("Da Vinci Code DVDRip", () => {
         const releaseName = "Da Vinci Code DVDRip";
 
