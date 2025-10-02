@@ -43,7 +43,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("unrated", /\bunrated|uncensored\b/i, { type: "boolean" });
 
     // Region
-    parser.addHandler("region", /R[0-9]/);
+    parser.addHandler("region", /(?:\b|[Dd](?:vd|VD))(R[0-9])/);
 
     // Container
     parser.addHandler("container", /\b(MKV|AVI|MP4)\b/i, { type: "lowercase" });
