@@ -47,6 +47,21 @@ describe("Random releases", () => {
         });
     });
 
+    it("Joker.2019.1080p.BluRay.DD-EX5.1.x264-playHD", () => {
+        const releaseName = "Joker.2019.1080p.BluRay.DD-EX5.1.x264-playHD";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Joker",
+            year: 2019,
+            resolution: "1080p",
+            source: "bluray",
+            audio: "dd-ex",
+            channels: 5.1,
+            codec: "x264",
+            group: "playHD"
+        });
+    });
+
     it ("The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)", () => {
         const releaseName = "The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)";
 
