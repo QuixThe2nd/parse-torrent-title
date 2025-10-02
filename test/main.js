@@ -47,6 +47,26 @@ describe("Random releases", () => {
         });
     });
 
+    it ("The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)", () => {
+        const releaseName = "The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "The Fresh Prince of Bel-Air",
+            year: 1990,
+            season: 4,
+            resolution: "1080p",
+            service: "HMAX",
+            source: "web-dl",
+            codec: "h265",
+            color: "SDR",
+            audio: "dd",
+            channels: 2.0,
+            language: "eng",
+            group: "HONE"
+
+        });
+    })
+
     it("Da Vinci Code DVDRip", () => {
         const releaseName = "Da Vinci Code DVDRip";
 
