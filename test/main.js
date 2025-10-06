@@ -198,6 +198,7 @@ describe("Random releases", () => {
         expect(parse(releaseName)).to.deep.equal({
             title: "Desperation",
             source: "dvd",
+            sourcelist: ["dvd", "pal"],
             year: 2006,
             language: "multi",
             region: "R9",
