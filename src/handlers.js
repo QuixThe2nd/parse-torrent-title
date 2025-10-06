@@ -5,7 +5,7 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Resolution
     parser.addHandler("resolution", /([0-9]{3,4}[pi])/i, { type: "lowercase" });
-    parser.addHandler("resolution", /(4k)/i, { type: "lowercase" });
+    parser.addHandler("resolution", /\b(4k)/i, { type: "lowercase" });
     parser.addHandler("resolution", /FHD|\b1080\b/i, { value: "1080p" });
     parser.addHandler("resolution", /UHD/i, { value: "4k" });
 
@@ -14,6 +14,9 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Open Matte
     parser.addHandler("openmatte", /OPEN[. ]MATTE/i, { type: "boolean" });
+
+    // Downscaled
+    parser.addHandler("downscaled", /\bDS4K\b/i, { value: "4k" });
 
     // Hybrid
     parser.addHandler("hybrid", /\bhybrid(\b|\d)/i, { type: "boolean" })

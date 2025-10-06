@@ -320,4 +320,23 @@ describe("Random releases", () => {
             container: "mkv"
         })
     })
+
+    it("Friends (1994) S08 (1080p DS4K BDRip DV HDR DDP5.1 x265) - Vialle", () => {
+        const releaseName = "Friends (1994) S08 (1080p DS4K BDRip DV HDR DDP5.1 x265) - Vialle";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Friends",
+            year: 1994,
+            season: 8,
+            resolution: "1080p",
+            downscaled: "4k",
+            source: "bdrip",
+            color: "HDR",
+            colorlist: ["HDR", "DV"],
+            audio: "ddp",
+            channels: 5.1,
+            codec: "x265",
+            group: "Vialle"
+        })
+    })
 });
