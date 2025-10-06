@@ -122,15 +122,16 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("color", /\b(?:DV|DoVi|Dolby\sVision)\b/i, { value: "DV" });
 
     // Audio
-    parser.addHandler("audio", /DTS-HD[\s-.]?(MA|Master Audio)/, { value: "dts-hd-ma" });
-    parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
-    parser.addHandler("audio", /DTS(?:[- ]?HD)?/, { value: "dts-hd", skipIfAlreadyFound: true });
     parser.addHandler("audio", /\bATMOS\b|DA\d/i, { value: "atmos" });
     parser.addHandler("audio", /MD|MP3|mp3|FLAC|TrueHD/, { type: "lowercase" });
     parser.addHandler("audio", /\bDD-EX(\b|\d)/i, { value: "dd-ex" });
     parser.addHandler("audio", /\bDD(?:\+|P)|EAC-?3/i, { value: "ddp" });
     parser.addHandler("audio", /\b(DD(?!-EX)(?:\b|\d)|AC-?3)/i, { value: "dd" });
     parser.addHandler("audio", /AAC(?:[. ]?2[. ]0)?/, { value: "aac" });
+    parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
+    parser.addHandler("audio", /DTS-HD[\s-.]?(MA|Master Audio)/, { value: "dts-hd-ma" });
+    parser.addHandler("audio", /DTS(?:[- ]?HD)/, { value: "dts-hd", skipIfAlreadyFound: true });
+    parser.addHandler("audio", /DTS/, { value: "dts", skipIfAlreadyFound: true });
 
     // Channels
     parser.addHandler("channels", /\d+[.\s](?:1|0)\b/i);
@@ -168,6 +169,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("episode", /[ée]p(?:isode)?[. _-]?([0-9]{1,5})/i, { type: "integer" });
 
     // Language
+    parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
+    parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
+    parser.addHandler("language", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual" });
     parser.addHandler("language", /\bRUS\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bUKR\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bJPN\b/i, { type: "lowercase" });
@@ -183,8 +187,4 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("language", /\bFR(?:ENCH)?\b/, { type: "lowercase" });
     parser.addHandler("language", /\bTruefrench|VF(?:[FI])\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bVOST(?:(?:F(?:R)?)|A)?|SUBFRENCH\b/i, { type: "lowercase" });
-    parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
-    parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
-    parser.addHandler("language", /\bDUAL\b/i, { type: "lowercase" });
-    parser.addHandler("language", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual" });
 };

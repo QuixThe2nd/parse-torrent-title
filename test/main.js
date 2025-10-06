@@ -227,8 +227,8 @@ describe("Random releases", () => {
         expect(parse(releaseName)).to.deep.equal({
             title: "Rush Hour 3",
             year: 2007,
-            language: "german",
-            languagelist: ["german", "dual"],
+            language: "dual",
+            languagelist: ["dual", "german"],
             audio: "ddp",
             resolution: "1080p",
             source: "bluray",
