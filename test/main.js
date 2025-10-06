@@ -268,4 +268,22 @@ describe("Random releases", () => {
             group: "j3rico"
         })
     })
+
+    it("Iron Man 3 2013 Hybrid 1080p BluRay DDP Atmos 5 1 x264-BiTOR.mkv", () => {
+        const releaseName = "Iron Man 3 2013 Hybrid 1080p BluRay DDP Atmos 5 1 x264-BiTOR.mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Iron Man 3",
+            year: 2013,
+            hybrid: true,
+            resolution: "1080p",
+            source: "bluray",
+            audio: "atmos",
+            audiolist: ["atmos", "ddp"],
+            channels: 5.1,
+            codec: "x264",
+            group: "BiTOR",
+            container: "mkv"
+        })
+    })
 });

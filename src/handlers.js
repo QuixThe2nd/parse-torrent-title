@@ -15,6 +15,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Open Matte
     parser.addHandler("openmatte", /OPEN[. ]MATTE/i, { type: "boolean" });
 
+    // Hybrid
+    parser.addHandler("hybrid", /\bhybrid(\b|\d)/i, { type: "boolean" })
+
     // Convert
     parser.addHandler("convert", /CONVERT/, { type: "boolean" });
 
