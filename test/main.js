@@ -219,4 +219,20 @@ describe("Random releases", () => {
             group: "HTG",
         });
     });
+
+    it ("Rush.Hour.3.2007.German.EAC3.DL.1080p.BluRay.x265-VECTOR", () => {
+        const releaseName = "Rush.Hour.3.2007.German.EAC3.DL.1080p.BluRay.x265-VECTOR";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Rush Hour 3",
+            year: 2007,
+            language: "german",
+            languagelist: ["german", "dual"],
+            audio: "ddp",
+            resolution: "1080p",
+            source: "bluray",
+            codec: "x265",
+            group: "VECTOR"
+        })
+    });
 });
