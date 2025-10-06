@@ -62,6 +62,22 @@ describe("Random releases", () => {
         });
     });
 
+    it("Seinfeld.S07.1080p.AMZN.WEB-DL.DDP2.0.H.264-NTb", () => {
+        const releaseName = "Seinfeld.S07.1080p.AMZN.WEB-DL.DDP2.0.H.264-NTb";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Seinfeld",
+            season: 7,
+            resolution: "1080p",
+            service: "AMZN",
+            source: "web-dl",
+            audio: "ddp",
+            channels: 2,
+            codec: "h264",
+            group: "NTb"
+        })
+    })
+
     it ("The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)", () => {
         const releaseName = "The Fresh Prince of Bel-Air (1990) S04 (1080p HMAX WEB-DL H265 SDR DD 2.0 English - HONE)";
 
