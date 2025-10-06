@@ -235,4 +235,19 @@ describe("Random releases", () => {
             group: "VECTOR"
         })
     });
+
+    it("Spider-Man Into The Spider-Verse (2018) 1080p AMZN WEB-DL Multi-Audio DDP 5.1 E-Sub -24xHD", () => {
+        const releaseName = "Spider-Man Into The Spider-Verse (2018) 1080p AMZN WEB-DL Multi-Audio DDP 5.1 E-Sub -24xHD";
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Spider-Man Into The Spider-Verse",
+            year: 2018,
+            resolution: "1080p",
+            service: "AMZN",
+            source: "web-dl",
+            language: "multi",
+            audio: "ddp",
+            channels: 5.1,
+            group: "24xHD"
+        })
+    })
 });

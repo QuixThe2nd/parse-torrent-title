@@ -172,7 +172,8 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("language", /\bFR(?:ENCH)?\b/, { type: "lowercase" });
     parser.addHandler("language", /\bTruefrench|VF(?:[FI])\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bVOST(?:(?:F(?:R)?)|A)?|SUBFRENCH\b/i, { type: "lowercase" });
-    parser.addHandler("language", /\bMULTi(?:Lang|-VF2)?\b/i, { type: "lowercase" });
+    parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
+    parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
     parser.addHandler("language", /\bDUAL\b/i, { type: "lowercase" });
     parser.addHandler("language", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual" });
 };
