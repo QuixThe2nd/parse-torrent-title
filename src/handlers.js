@@ -13,7 +13,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("extended", /EXTENDED(?:[\s.]CUT)?/i, { type: "boolean" });
 
     // Theatrical
-    parser.addHandler("theatrical", /Theatrical(?: Cut)?/, { type: "boolean" });
+    parser.addHandler("theatrical", /Theatrical(?:[. ]Cut)?/, { type: "boolean" });
 
     // Open Matte
     parser.addHandler("openmatte", /OPEN[. ]MATTE/i, { type: "boolean" });
