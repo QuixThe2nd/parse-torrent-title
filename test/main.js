@@ -238,6 +238,7 @@ describe("Random releases", () => {
 
     it("Spider-Man Into The Spider-Verse (2018) 1080p AMZN WEB-DL Multi-Audio DDP 5.1 E-Sub -24xHD", () => {
         const releaseName = "Spider-Man Into The Spider-Verse (2018) 1080p AMZN WEB-DL Multi-Audio DDP 5.1 E-Sub -24xHD";
+
         expect(parse(releaseName)).to.deep.equal({
             title: "Spider-Man Into The Spider-Verse",
             year: 2018,
@@ -248,6 +249,22 @@ describe("Random releases", () => {
             audio: "ddp",
             channels: 5.1,
             group: "24xHD"
+        })
+    });
+
+    it("Modern Family.S02.1080p.Bluray.DTS-HD Master Audio.5.1.SDR.x265-j3rico", () => {
+        const releaseName = "Modern Family.S02.1080p.Bluray.DTS-HD Master Audio.5.1.SDR.x265-j3rico";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Modern Family",
+            season: 2,
+            resolution: "1080p",
+            source: "bluray",
+            audio: "dts-hd-ma",
+            channels: 5.1,
+            color: "SDR",
+            codec: "x265",
+            group: "j3rico"
         })
     })
 });

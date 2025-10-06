@@ -108,7 +108,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("color", /\b(?:DV|DoVi|Dolby\sVision)\b/i, { value: "DV" });
 
     // Audio
-    parser.addHandler("audio", /DTS-HD[\s-.]?MA/, { value: "dts-hd-ma" });
+    parser.addHandler("audio", /DTS-HD[\s-.]?(MA|Master Audio)/, { value: "dts-hd-ma" });
     parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
     parser.addHandler("audio", /DTS(?:[- ]?HD)?/, { type: "lowercase", skipIfAlreadyFound: true });
     parser.addHandler("audio", /\bATMOS\b|DA\d/i, { value: "atmos" });
