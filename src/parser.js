@@ -53,7 +53,7 @@ function createHandlerFromRegExp(name, regExp, options) {
 }
 
 function cleanTitle(rawTitle) {
-    let cleanedTitle = rawTitle;
+    let cleanedTitle = rawTitle.replace(/^\.+|\.+$/g, '');
 
     if (cleanedTitle.indexOf(" ") === -1 && cleanedTitle.indexOf(".") !== -1) {
         cleanedTitle = cleanedTitle.replace(/\./g, " ");
