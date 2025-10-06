@@ -136,8 +136,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("samplerate", /\b((?:\d+)(?:\.\d+)?)[-\s.]?kHz?\b/i, { type: "float" });
 
     // Group
-    parser.addHandler("group", /- ?\(?([^\-. )[]+)\)?(?:\[.*\])?\)?$/);
-    parser.addHandler("group", /- [a-zA-Z]+\)?[ []([a-zA-Z]+)\)?\]?$/i);
+    parser.addHandler("group", /- ?(?:\w+ )?\(?(\w+)\)?(?:\.[a-zA-Z]+)?$/);
 
     // Encoder
     parser.addHandler("encoder", /- ([a-zA-Z]+)\)?[ [][a-zA-Z]+\)?\]?$/i);

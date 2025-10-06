@@ -43,6 +43,7 @@ describe("Random releases", () => {
             audiolist: ["atmos", "ddp"],
             channels: 5.1,
             codec: "h265",
+            group: "ARCADE",
             container: "mkv"
         });
     });
