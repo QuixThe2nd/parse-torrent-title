@@ -16,6 +16,7 @@ declare namespace ParseTorrentTitle {
         extended?: boolean;
         unrated?: boolean;
         theatrical?: boolean;
+        uncut?: boolean;
         openmatte?: boolean;
         proper?: boolean;
         repack?: boolean;
