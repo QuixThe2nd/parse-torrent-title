@@ -113,7 +113,6 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("audio", /DTS(?:[- ]?HD)?/, { type: "lowercase", skipIfAlreadyFound: true });
     parser.addHandler("audio", /\bATMOS\b|DA\d/i, { value: "atmos" });
     parser.addHandler("audio", /MD|MP3|mp3|FLAC|TrueHD/, { type: "lowercase" });
-    parser.addHandler("audio", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual audio" });
     parser.addHandler("audio", /\bDD-EX(\b|\d)/i, { value: "dd-ex" });
     parser.addHandler("audio", /\bDD(?:\+|P)|EAC-?3/i, { value: "ddp" });
     parser.addHandler("audio", /\bDD(?!-EX)(?:\b|\d)|AC-?3/i, { value: "dd" });
@@ -167,7 +166,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("language", /\bNORDiC\b/, { type: "lowercase" });
     parser.addHandler("language", /\bViETNAM\b/, { type: "lowercase" });
     parser.addHandler("language", /\bFLEMISH\b/, { type: "lowercase" });
-    parser.addHandler("language", /\bGERMAN\b/, { type: "lowercase" });
+    parser.addHandler("language", /\bGERMAN\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bDUBBED\b/, { type: "lowercase" });
     parser.addHandler("language", /\b(ITA(?:LIAN)?|iTA(?:LiAN)?)\b/, { value: "ita" });
     parser.addHandler("language", /\bFR(?:ENCH)?\b/, { type: "lowercase" });
@@ -175,4 +174,5 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("language", /\bVOST(?:(?:F(?:R)?)|A)?|SUBFRENCH\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bMULTi(?:Lang|-VF2)?\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bDUAL\b/i, { type: "lowercase" });
+    parser.addHandler("language", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual" });
 };
