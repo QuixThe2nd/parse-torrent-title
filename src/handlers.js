@@ -139,13 +139,10 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("samplerate", /\b((?:\d+)(?:\.\d+)?)[-\s.]?kHz?\b/i, { type: "float" });
 
     // Group
-    parser.addHandler("group", /- ?(?:\w+ )?\(?(\w+)\)?(?:\.[a-zA-Z]+)?$/);
+    parser.addHandler("group", /-[ ([]*(?:\w+[ \][)]+)?(\w+(?:\.\w+)?(?<!\.mkv|\.mp4))[)\]]?(?:\.(?:mkv|mp4))?$/i);
 
     // Encoder
-    parser.addHandler("encoder", /- ([a-zA-Z]+)\)?[ [][a-zA-Z]+\)?\]?$/i);
-
-    // Tracker
-    parser.addHandler("tracker", /[^\-. )]+\[([^\]]+)\]$/);
+    parser.addHandler("encoder", /-[ ([]*(?:(\w+)[ \][)]+)\w+(?:\.\w+)?(?<!\.mkv|\.mp4)[)\]]?(?:\.(?:mkv|mp4))?$/i);
 
     // Season
     parser.addHandler("season", /([0-9]{1,2})xall/i, { type: "integer" });

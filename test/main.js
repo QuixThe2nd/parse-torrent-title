@@ -286,4 +286,39 @@ describe("Random releases", () => {
             container: "mkv"
         })
     })
+
+    it("Allegiant (2016) (1080p BDRip x265 10bit TrueHD Atmos 7.1 - JBENT)[TAoE]", () => {
+        const releaseName = "Allegiant (2016) (1080p BDRip x265 10bit TrueHD Atmos 7.1 - JBENT)[TAoE]";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Allegiant",
+            year: 2016,
+            resolution: "1080p",
+            source: "bdrip",
+            codec: "x265",
+            bitdepth: 10,
+            audio: "atmos",
+            audiolist: ["atmos", "truehd"],
+            channels: 7.1,
+            encoder: "JBENT",
+            group: "TAoE"
+        })
+    })
+
+    it("The.Rookie.S04E11.PROPER.1080p.WEB.h264-GOSSIP[eztv.re].mkv", () => {
+        const releaseName = "The.Rookie.S04E11.PROPER.1080p.WEB.h264-GOSSIP[eztv.re].mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "The Rookie",
+            season: 4,
+            episode: 11,
+            proper: true,
+            resolution: "1080p",
+            source: "web",
+            codec: "h264",
+            encoder: "GOSSIP",
+            group: "eztv.re",
+            container: "mkv"
+        })
+    })
 });

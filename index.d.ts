@@ -37,7 +37,6 @@ declare namespace ParseTorrentTitle {
         bitdepth?: number;
         encoder?: string;
         group?: string;
-        tracker?: string;
         season?: number;
         episode?: number;
         language?: string;
