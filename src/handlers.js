@@ -16,7 +16,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("theatrical", /Theatrical(?:[. ]Cut)?/, { type: "boolean" });
 
     // Uncut
-    parser.addHandler("uncut", /Uncut/, { type: "boolean" });
+    parser.addHandler("uncut", /.+\bUncut\b/, { type: "boolean" });
 
     // Open Matte
     parser.addHandler("openmatte", /OPEN[. ]MATTE/i, { type: "boolean" });

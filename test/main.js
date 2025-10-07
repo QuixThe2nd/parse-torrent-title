@@ -359,4 +359,25 @@ describe("Random releases", () => {
             container: "mkv"
         })
     })
+
+    it("Uncut Gems (2019) Criterion (1080p BluRay x265 SDR DDP Atmos 7.1 English - DarQ HONE).mkv", () => {
+        const releaseName = "Uncut Gems (2019) Criterion (1080p BluRay x265 SDR DDP Atmos 7.1 English - DarQ HONE).mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Uncut Gems",
+            year: 2019,
+            criterion: true,
+            resolution: "1080p",
+            source: "bluray",
+            codec: "x265",
+            color: "SDR",
+            audio: "atmos",
+            audiolist: ["atmos", "ddp"],
+            channels: 7.1,
+            language: "eng",
+            encoder: "DarQ",
+            group: "HONE",
+            container: "mkv"
+        })
+    })
 });
