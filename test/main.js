@@ -380,4 +380,22 @@ describe("Random releases", () => {
             container: "mkv"
         })
     })
+
+    it("American Wedding 2003 Unrated + Extras 1080p BluRay H.265 10bit AAC 5.1-FreetheFish", () => {
+        const releaseName = "American Wedding 2003 Unrated + Extras 1080p BluRay H.265 10bit AAC 5.1-FreetheFish";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "American Wedding",
+            year: 2003,
+            unrated: true,
+            extras: true,
+            resolution: "1080p",
+            source: "bluray",
+            codec: "h265",
+            bitdepth: 10,
+            audio: "aac",
+            channels: 5.1,
+            group: "FreetheFish"
+        })
+    })
 });
