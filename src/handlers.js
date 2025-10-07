@@ -54,6 +54,9 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Unrated
     parser.addHandler("unrated", /\bunrated|uncensored\b/i, { type: "boolean" });
 
+    // Criterion
+    parser.addHandler("criterion", /\bCriterion\b/, { type: "boolean" });
+
     // Region
     parser.addHandler("region", /(?:\b|[Dd](?:vd|VD))(R[0-9])/);
 
