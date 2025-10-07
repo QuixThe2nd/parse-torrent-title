@@ -171,7 +171,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Language
     parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
-    parser.addHandler("language", /Dual(?:[- ]Audio)|[ .]DL[ .]/i, { value: "dual" });
+    parser.addHandler("language", /Dual(?:[- ]Audio)?|[ .]DL[ .]/i, { value: "dual" });
     parser.addHandler("language", /\bRUS\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bUKR\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bJPN\b/i, { type: "lowercase" });

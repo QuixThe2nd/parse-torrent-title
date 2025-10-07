@@ -340,4 +340,23 @@ describe("Random releases", () => {
             group: "Vialle"
         })
     })
+
+    it("Star.Wars.Episodio.III.A.Vinganca.dos.Sith.2005.1080p.DSNP.WEB-DL.DDP5.1.Atmos.H.264.DUAL-sh4down.mkv", () => {
+        const releaseName = "Star.Wars.Episodio.III.A.Vinganca.dos.Sith.2005.1080p.DSNP.WEB-DL.DDP5.1.Atmos.H.264.DUAL-sh4down.mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Star Wars Episodio III A Vinganca dos Sith",
+            year: 2005,
+            resolution: "1080p",
+            service: "DSNP",
+            source: "web-dl",
+            audio: "atmos",
+            audiolist: ["atmos", "ddp"],
+            channels: 5.1,
+            codec: "h264",
+            language: "dual",
+            group: "sh4down",
+            container: "mkv"
+        })
+    })
 });
