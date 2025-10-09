@@ -80,7 +80,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("source", /\bPPVRip\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bR5\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bVHSSCR\b/i, { type: "lowercase" });
-    parser.addHandler("source", /(\b(?:Blu-?Ray)|([\b\d]BR))\b/i, { value: "bluray" });
+    parser.addHandler("source", /((?:\bBlu-?Ray)|((?:\b|\d)BR))\b/i, { value: "bluray" });
     parser.addHandler("source", /\bWEB-?DL\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bWEB-?Rip\b/i, { type: "lowercase" });
     parser.addHandler("source", /\b(?:DL|WEB|BD|BR)MUX\b/i, { type: "lowercase" });
