@@ -314,7 +314,7 @@ describe("Random releases", () => {
             episode: 11,
             proper: true,
             resolution: "1080p",
-            source: "web",
+            source: "web-dl",
             codec: "h264",
             encoder: "GOSSIP",
             group: "eztv.re",
@@ -396,6 +396,23 @@ describe("Random releases", () => {
             audio: "aac",
             channels: 5.1,
             group: "FreetheFish"
+        })
+    })
+
+    it("Spider-Man Across The Spider-Verse (2023) - [1080p BluRay DS4K DV x265] [DDP 7.1] - c0kE", () => {
+        const releaseName = "Spider-Man Across The Spider-Verse (2023) - [1080p BluRay DS4K DV x265] [DDP 7.1] - c0kE";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Spider-Man Across The Spider-Verse",
+            year: 2023,
+            resolution: "1080p",
+            source: "bluray",
+            downscaled: "4k",
+            color: "DV",
+            codec: "x265",
+            audio: "ddp",
+            channels: 7.1,
+            group: "c0kE"
         })
     })
 });
