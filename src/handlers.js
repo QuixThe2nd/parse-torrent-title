@@ -80,11 +80,10 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("source", /\bPPVRip\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bR5\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bVHSSCR\b/i, { type: "lowercase" });
-    parser.addHandler("source", /(\b(?:Blu-?Ray)|([\b\d]BR))\b/i, { value: "bluray" });
-    parser.addHandler("source", /\bWEB-?DL\b/i, { type: "lowercase" });
+    parser.addHandler("source", /((?:\bBlu-?Ray)|((?:\b|\d)BR))\b/i, { value: "bluray" });
+    parser.addHandler("source", /\bWEB(?:-?DL)?\b(?!-?RIP)/i, { value: "web-dl" });
     parser.addHandler("source", /\bWEB-?Rip\b/i, { type: "lowercase" });
     parser.addHandler("source", /\b(?:DL|WEB|BD|BR)MUX\b/i, { type: "lowercase" });
-    parser.addHandler("source", /[\s.[-](WEB)[\s.\]-]/i, { type: "lowercase", skipIfAlreadyFound: true });
     parser.addHandler("source", /\b(DivX|XviD)\b/, { type: "lowercase" });
     parser.addHandler("source", /HDTV/i, { type: "lowercase" });
     parser.addHandler("source", /\bIMAX[. -]Enhanced\b/i, { type: "lowercase" });
@@ -167,7 +166,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("season", /S([0-9]{1,2}) ?E[0-9]{1,2}/i, { type: "integer" });
     parser.addHandler("season", /([0-9]{1,2})x[0-9]{1,2}/, { type: "integer" });
     parser.addHandler("season", /(?:Saison|Season)[. _-]?([0-9]{1,2})/i, { type: "integer" });
-    parser.addHandler("season", /S([0-9]{1,2})(?![0-9])/i, { type: "integer" });
+    parser.addHandler("season", /\bS([0-9]{1,2})(?![0-9])/i, { type: "integer" });
 
     // Episode
     parser.addHandler("episode", /S[0-9]{1,2} ?E([0-9]{1,5})/i, { type: "integer" });
@@ -175,8 +174,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("episode", /[ée]p(?:isode)?[. _-]?([0-9]{1,5})/i, { type: "integer" });
 
     // Language
-    parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
-    parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
+    parser.addHandler("language", /\bMULTi(?:Lang|-audio|-VF2)?\b/i, { value: "multi" });
     parser.addHandler("language", /Dual(?:[- ]Audio)?|[ .]DL[ .]/i, { value: "dual" });
     parser.addHandler("language", /\bRUS\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bUKR\b/i, { type: "lowercase" });
