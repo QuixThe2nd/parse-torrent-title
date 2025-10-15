@@ -86,7 +86,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("source", /\b(?:DL|WEB|BD|BR)MUX\b/i, { type: "lowercase" });
     parser.addHandler("source", /\b(DivX|XviD)\b/, { type: "lowercase" });
     parser.addHandler("source", /HDTV/i, { type: "lowercase" });
-    parser.addHandler("source", /\bIMAX[. -]Enhanced\b/i, { type: "lowercase" });
+    parser.addHandler("source", /\bIMAX[. -]Enhanced\b/i, { value: "imax-enhanced" });
     parser.addHandler("source", /\bIMAX\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bHDDVD\b/i, { type: "lowercase" });
     parser.addHandler("source", /\bNTSC\b/i, { type: "lowercase" });
