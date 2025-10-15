@@ -415,4 +415,19 @@ describe("Random releases", () => {
             group: "c0kE"
         })
     })
+
+    it("Uncut Gems (2019) - [1080p BluRay x264] [DTS-HD-MA 5.1] - EVO", () => {
+        const releaseName = "Uncut Gems (2019) - [1080p BluRay x264] [DTS-HD-MA 5.1] - EVO";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Uncut Gems",
+            year: 2019,
+            resolution: "1080p",
+            source: "bluray",
+            codec: "x264",
+            audio: "dts-hd-ma",
+            channels: 5.1,
+            group: "EVO"
+        })
+    })
 });
