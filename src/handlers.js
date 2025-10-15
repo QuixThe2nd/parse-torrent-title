@@ -174,8 +174,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("episode", /[ée]p(?:isode)?[. _-]?([0-9]{1,5})/i, { type: "integer" });
 
     // Language
-    parser.addHandler("language", /\bMULTi-VF2\b/i, { type: "lowercase" });
-    parser.addHandler("language", /\bMULTi(?:Lang|-audio)?\b/i, { value: "multi" });
+    parser.addHandler("language", /\bMULTi(?:Lang|-audio|-VF2)?\b/i, { value: "multi" });
     parser.addHandler("language", /Dual(?:[- ]Audio)?|[ .]DL[ .]/i, { value: "dual" });
     parser.addHandler("language", /\bRUS\b/i, { type: "lowercase" });
     parser.addHandler("language", /\bUKR\b/i, { type: "lowercase" });
