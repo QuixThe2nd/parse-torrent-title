@@ -114,6 +114,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("service", /\bROKU\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bSKST\b/i, { type: "uppercase" });
     parser.addHandler("service", /\bSTAN\b/i, { type: "uppercase" });
+    parser.addHandler("service", /\bVUDU\b/i, { type: "uppercase" });
 
     // Codec
     parser.addHandler("codec", /h[-. ]?265|hevc/i, { value: "h265" });
