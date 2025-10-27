@@ -146,9 +146,9 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Channels
     parser.addHandler("channels", /\d+[.\s](?:1|0)\b/i);
-    parser.addHandler("channels", /2(?:ch)/, { value: 2.0 });
-    parser.addHandler("channels", /6(?:ch)/, { value: 5.1 });
-    parser.addHandler("channels", /8(?:ch)/, { value: 7.1 });
+    parser.addHandler("channels", /\b2(?:ch)\b/i, { value: 2.0 });
+    parser.addHandler("channels", /\b6(?:ch)\b/i, { value: 5.1 });
+    parser.addHandler("channels", /\b8(?:ch)\b/i, { value: 7.1 });
     parser.addHandler("channels", ({ result }) => {
         if (result.channels && typeof result.channels === 'string') {
             result.channels = parseFloat(result.channels.replace(' ', '.'))
