@@ -5,7 +5,7 @@ describe("Parsing downscaled", () => {
     it("should detect if the release is downscaled", () => {
         const releaseName = "Friends (1994) S08 (1080p DS4K BDRip DV HDR DDP5.1 x265) - Vialle";
 
-        expect(parse(releaseName)).to.deep.include({ downscaled: "4k" });
+        expect(parse(releaseName)).to.deep.include({ downscaled: "2160p" });
     });
 
     it("should not detect downscaled when the release is not flagged as such", () => {

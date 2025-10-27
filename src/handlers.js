@@ -22,7 +22,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("openmatte", /\bOPEN[. ]MATTE/i, { type: "boolean" });
 
     // Downscaled
-    parser.addHandler("downscaled", /\bDS4K\b/i, { value: "4k" });
+    parser.addHandler("downscaled", /\bDS4K\b/i, { value: "2160p" });
 
     // Hybrid
     parser.addHandler("hybrid", /\bhybrid(\b|\d)/i, { type: "boolean" })
