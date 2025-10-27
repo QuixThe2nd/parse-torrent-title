@@ -29,6 +29,6 @@ describe("Parsing resolution", () => {
     it("should detect the 4k resolution correctly", () => {
         const releaseName = "The Smurfs 2 2013 COMPLETE FULL BLURAY UHD (4K) - IPT EXCLUSIVE";
 
-        expect(parse(releaseName)).to.deep.include({ resolution: "4k" });
+        expect(parse(releaseName)).to.deep.include({ resolution: "2160p" });
     });
 });

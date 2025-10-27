@@ -5,9 +5,9 @@ exports.addDefaults = /** @type Parser */ parser => {
 
     // Resolution
     parser.addHandler("resolution", /([0-9]{3,4}[pi])/i, { type: "lowercase" });
-    parser.addHandler("resolution", /\b(4k)/i, { type: "lowercase" });
+    parser.addHandler("resolution", /\b(4k)/i, { value: "2160p" });
     parser.addHandler("resolution", /FHD|\b1080\b/i, { value: "1080p" });
-    parser.addHandler("resolution", /UHD/i, { value: "4k" });
+    parser.addHandler("resolution", /UHD/i, { value: "2160p" });
 
     // Extended
     parser.addHandler("extended", /EXTENDED(?:[\s.]CUT)?/i, { type: "boolean" });
