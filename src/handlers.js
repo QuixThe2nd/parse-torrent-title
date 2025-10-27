@@ -137,6 +137,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("audio", /\bDD(?:\+|P)|EAC-?3/i, { value: "ddp" });
     parser.addHandler("audio", /\b(DD(?!-EX)(?:\b|\d)|AC-?3)/i, { value: "dd" });
     parser.addHandler("audio", /AAC(?:[. ]?2[. ]0)?/, { value: "aac" });
+    parser.addHandler("audio", /DTS-X/, { type: "lowercase" });
     parser.addHandler("audio", /DTS-ES/, { type: "lowercase" });
     parser.addHandler("audio", /DTS-HD[\s-.]?(MA|Master Audio)/, { value: "dts-hd-ma" });
     parser.addHandler("audio", /DTS(?:[- ]?HD)/, { value: "dts-hd", skipIfAlreadyFound: true });
