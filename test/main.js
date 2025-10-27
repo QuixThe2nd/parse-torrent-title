@@ -448,4 +448,18 @@ describe("Random releases", () => {
             group: "ĶOCHÂ"
         })
     })
+
+    it("Suits S02 br 10bit dts hevc-d3g", () => {
+        const releaseName = "Suits S02 br 10bit dts hevc-d3g";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Suits",
+            season: 2,
+            source: 'bluray',
+            bitdepth: 10,
+            audio: 'dts',
+            codec: 'h265',
+            group: 'd3g'
+        })
+    })
 });
