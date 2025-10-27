@@ -430,4 +430,22 @@ describe("Random releases", () => {
             group: "EVO"
         })
     })
+
+    it("Ratatouille (2007) UHD 2160p BluRay DV HDR10+ HEVC Multi DD 5.1-ĶOCHÂ", () => {
+        const releaseName = "Ratatouille (2007) UHD 2160p BluRay DV HDR10+ HEVC Multi DD 5.1-ĶOCHÂ";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Ratatouille",
+            year: 2007,
+            resolution: '2160p',
+            source: 'bluray',
+            color: "HDR10+",
+            colorlist: ["HDR10+", "DV"],
+            codec: "h265",
+            language: "multi",
+            audio: "dd",
+            channels: 5.1,
+            group: "ĶOCHÂ"
+        })
+    })
 });
