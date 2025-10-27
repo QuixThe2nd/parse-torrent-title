@@ -162,10 +162,10 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("samplerate", /\b((?:\d+)(?:\.\d+)?)[-\s.]?kHz?\b/i, { type: "float" });
 
     // Group
-    parser.addHandler("group", /-[ ([]*(?:[\p{L}\p{N}_]+[ \][)]+)?([\p{L}\p{N}_]+(?:\.[\p{L}\p{N}_]+)?(?<!\.mkv|\.mp4))[)\]]?(?:\.(?:mkv|mp4))?$/iu);
+    parser.addHandler("group", /-[ ([]*(?:[\p{L}\p{N}_]+[ \][)@]+)?([\p{L}\p{N}_]+(?:\.[\p{L}\p{N}_]+)?(?<!\.mkv|\.mp4))[)\]]?(?:\.(?:mkv|mp4))?$/iu);
 
     // Encoder
-    parser.addHandler("encoder", /-[ ([]*(?:([\p{L}\p{N}_]+)[ \][)]+)[\p{L}\p{N}_]+(?:\.[\p{L}\p{N}_]+)?(?<!\.mkv|\.mp4)[)\]]?(?:\.(?:mkv|mp4))?$/iu);
+    parser.addHandler("encoder", /-[ ([]*(?:([\p{L}\p{N}_]+)[ \][)@]+)[\p{L}\p{N}_]+(?:\.[\p{L}\p{N}_]+)?(?<!\.mkv|\.mp4)[)\]]?(?:\.(?:mkv|mp4))?$/iu);
 
     // Season
     parser.addHandler("season", /([0-9]{1,2})xall/i, { type: "integer" });

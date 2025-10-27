@@ -462,4 +462,25 @@ describe("Random releases", () => {
             group: 'd3g'
         })
     })
+
+    it("Deadpool.2.2018.2160p.DSNP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-Kebab@RFX.mkv", () => {
+        const releaseName = "Deadpool.2.2018.2160p.DSNP.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-Kebab@RFX.mkv";
+
+        expect(parse(releaseName)).to.deep.equal({
+            title: "Deadpool 2",
+            year: 2018,
+            resolution: "2160p",
+            service: "DSNP",
+            source: "web-dl",
+            audio: "atmos",
+            audiolist: ["atmos", "ddp"],
+            channels: 5.1,
+            color: "HDR",
+            colorlist: ["HDR", "DV"],
+            codec: "h265",
+            encoder: "Kebab",
+            group: "RFX",
+            container: "mkv"
+        })
+    })
 });
