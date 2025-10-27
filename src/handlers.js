@@ -64,7 +64,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("region", /(?:\b|[Dd](?:vd|VD))(R[0-9])/);
 
     // Container
-    parser.addHandler("container", /\b(MKV|AVI|MP4)\b/i, { type: "lowercase" });
+    parser.addHandler("container", /\b(MKV|AVI|MP4|EPUB|PDF)\b/i, { type: "lowercase" });
 
     // Source
     parser.addHandler("source", /\b(?:HD-?)?CAM\b/, { type: "lowercase" });
