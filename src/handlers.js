@@ -55,7 +55,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("unrated", /\bunrated|uncensored\b/i, { type: "boolean" });
 
     // Extras
-    parser.addHandler("extras", /(?<=\b[12]\d{3}\b).*(\b|\.)\b(Extras?|Bonus|Extended[ ._-]Clip|Special Feature[s]?)\b/i, { type: "boolean" })
+    parser.addHandler("extras", /(?<=\b[12]\d{3}\b).*(\b|\.)\b(Ext(?:ras?)?|Bonus|Extended[ ._-]Clip|Special Feature[s]?)\b/i, { type: "boolean" })
 
     // Criterion
     parser.addHandler("criterion", /\bCriterion\b/, { type: "boolean" });
