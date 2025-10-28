@@ -19,7 +19,7 @@ exports.addDefaults = /** @type Parser */ parser => {
     parser.addHandler("uncut", /.+\bUNCUT\b/i, { type: "boolean" });
 
     // Open Matte
-    parser.addHandler("openmatte", /\bOPEN[. ]MATTE/i, { type: "boolean" });
+    parser.addHandler("openmatte", /\bOPEN[. ]?MATTE/i, { type: "boolean" });
 
     // Downscaled
     parser.addHandler("downscaled", /\bDS4K\b/i, { value: "2160p" });
