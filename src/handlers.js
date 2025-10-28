@@ -119,7 +119,8 @@ exports.addDefaults = /** @type Parser */ parser => {
     // Codec
     parser.addHandler("codec", /h[-. ]?265|hevc/i, { value: "h265" });
     parser.addHandler("codec", /h[-. ]?264|avc/i, { value: "h264" });
-    parser.addHandler("codec", /dvix|mpeg2|divx|xvid|x[-. ]?26[45]/i, { type: "lowercase" });
+    parser.addHandler("codec", /\bmpeg[ -]?2\b/i, { value: "mpeg2" });
+    parser.addHandler("codec", /dvix|divx|xvid|x[-. ]?26[45]/i, { type: "lowercase" });
     parser.addHandler("codec", ({ result }) => {
         if (result.codec) {
             result.codec = result.codec.replace(/[ .-]/, "");
